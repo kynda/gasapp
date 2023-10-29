@@ -1,24 +1,13 @@
 {
-    "name": "slim/slim-skeleton",
-    "description": "A Slim Framework skeleton application for rapid development",
-    "keywords": [
-        "microframework",
-        "rest",
-        "router",
-        "psr7"
-    ],
-    "homepage": "http://github.com/slimphp/Slim-Skeleton",
-    "license": "MIT",
+    "name": "hdc/gasapp",
+    "description": "A simple application for tracking vehicle gas usage",
+    "homepage": "http://github.com/kynda/gasapp",
+    "license": "GPL3",
     "authors": [
         {
-            "name": "Josh Lockhart",
-            "email": "info@joshlockhart.com",
-            "homepage": "http://www.joshlockhart.com/"
-        },
-        {
-            "name": "Pierre Berube",
-            "email": "pierre@lgse.com",
-            "homepage": "http://www.lgse.com/"
+            "name": "Joseph Hallenbeck",
+            "email": "joe@joehallenbeck.com",
+            "homepage": "https://joehallenbeck.com"
         }
     ],
     "require": {
