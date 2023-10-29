@@ -5,14 +5,17 @@ volumes:
         driver: local
 
 services:
-    slim:
-        image: php:8-alpine
+    gasapp:
+        build: .
         working_dir: /var/www
         command: php -S 0.0.0.0:8080 -t public
         environment:
-            docker: "true"
+            docker: "true",
+            DATABASE: ${DATABASE}
+            ENVIRONMENT: ${ENVIRONMENT}
         ports:
             - "8080:8080"
         volumes:
             - .:/var/www
             - logs:/var/www/logs
+            - .data.db:/var/data.db

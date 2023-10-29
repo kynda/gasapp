@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Application\Settings\SettingsInterface;
+use App\Infrastructure\SqlitePDO;
 use DI\ContainerBuilder;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -25,6 +26,10 @@ return function (ContainerBuilder $containerBuilder) {
             $logger->pushHandler($handler);
 
             return $logger;
+        },
+        PDO::class => function(ContainerInterface $c) {
+            $settings = $c->get(SettingsInterface::class);
+            return SqlitePDO::create($settings->get('db'));
         },
     ]);
 };

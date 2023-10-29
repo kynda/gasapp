@@ -16,6 +16,7 @@ Installation
 ### Docker
 
 1. Clone this repo to a local system
+2. Copy `.data.base.db` to `.data.db`
 2. Run `docker compose up`
 3. Run `composer install`
 4. GasApp should now be running on http://localhost:8081
