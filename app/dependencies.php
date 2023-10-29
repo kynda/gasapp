@@ -10,6 +10,7 @@ use Monolog\Logger;
 use Monolog\Processor\UidProcessor;
 use Psr\Container\ContainerInterface;
 use Psr\Log\LoggerInterface;
+use Slim\Views\PhpRenderer as Renderer;
 
 return function (ContainerBuilder $containerBuilder) {
     $containerBuilder->addDefinitions([
@@ -31,5 +32,10 @@ return function (ContainerBuilder $containerBuilder) {
             $settings = $c->get(SettingsInterface::class);
             return SqlitePDO::create($settings->get('db'));
         },
+        Renderer::class => function(ContainerInterface $c) {
+            $renderer = new Renderer(__DIR__ . '/../templates');
+            $renderer->setLayout('layout.php');
+            return $renderer;
+        }
     ]);
 };

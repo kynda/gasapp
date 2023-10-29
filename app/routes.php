@@ -8,20 +8,15 @@ use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
+use Slim\Views\PhpRenderer as Renderer;
 
-return function (App $app) {
-    $app->options('/{routes:.*}', function (Request $request, Response $response) {
-        // CORS Pre-Flight OPTIONS Request Handler
-        return $response;
-    });
+$renderer = $app->getContainer()->get(Renderer::class);
 
-    $app->get('/', function (Request $request, Response $response) {
-        $response->getBody()->write('Hello world!');
-        return $response;
-    });
-
-    $app->group('/users', function (Group $group) {
-        $group->get('', ListUsersAction::class);
-        $group->get('/{id}', ViewUserAction::class);
+return function (App $app) use ($renderer) {
+    $app->get('/', function (Request $request, Response $response) use ($renderer) {
+        return $renderer->render($response, "hello.php", [
+            'title' => 'Hello World',
+            'name' => 'Joe',
+        ]);
     });
 };
