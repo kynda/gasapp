@@ -19,16 +19,16 @@ Installation
 2. Copy `.data.base.db` to `.data.db`
 2. Run `docker compose up`
 3. Run `composer install`
-4. GasApp should now be running on http://localhost:8081
+4. GasApp should now be running on http://localhost:8080
 
 Time is built using
 -------------------------------------------------------------------------------
 
 - The PHP Slim Framework
-- PHP 8.1
+- PHP 8.2
 - SQLITE
-- HTMLX
-- Tailwind CSS
+- Htmx
+- Materialize CSS
 - PDO
 
 ChangeLog
