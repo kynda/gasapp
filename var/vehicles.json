@@ -1,0 +1,18 @@
+[
+    [
+        {
+            "nick": "Bomby",
+            "make": "Toyota",
+            "model": "Tacoma",
+            "year": "2014",
+            "tank": "20"
+        },
+        {
+            "nick": "Mortimer",
+            "make": "Suzuki",
+            "model": "Swift",
+            "year": "2001",
+            "tank": "10"
+        }
+    ]
+]

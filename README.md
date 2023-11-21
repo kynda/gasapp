@@ -28,7 +28,7 @@ Time is built using
 - PHP 8.2
 - SQLITE
 - Htmx
-- Materialize CSS
+- Bootstrap 5
 - PDO
 
 ChangeLog
